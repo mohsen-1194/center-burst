@@ -1,4 +1,4 @@
-### write a program in Python that do the following instructions:
+### Write a program in Python that do the following instructions:
 
 #### In a square page of size 800 * 800 pixel and in a loop with 50 iteration:
 
