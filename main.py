@@ -33,7 +33,7 @@ def is_collide_border(p: Point) -> bool:
     )
 
 
-def is_far_from_center(lpoint: Point, npoint: Point) -> bool:
+def is_farther_from_center(lpoint: Point, npoint: Point) -> bool:
     d1 = math.dist((lpoint.x, lpoint.y), (CENTER.x, CENTER.y))
     d2 = math.dist((npoint.x, npoint.y), (CENTER.x, CENTER.y))
     return d2 > d1
@@ -57,7 +57,7 @@ def main():
 
         while not is_collide_border(last_p):
             next_p = next_point(last_p)
-            result = is_far_from_center(last_p, next_p)
+            result = is_farther_from_center(last_p, next_p)
             if result:
                 draw_line(draw, last_p, next_p, color)
                 last_p = next_p
