@@ -1,5 +1,5 @@
+import math
 from dataclasses import dataclass
-from math import sqrt
 from random import randint
 
 from PIL import Image, ImageDraw
@@ -33,13 +33,9 @@ def is_collide_border(p: Point) -> bool:
     )
 
 
-def cal_distance(p: Point) -> float:
-    return sqrt((CENTER.x - p.x) ** 2 + (CENTER.y - p.y) ** 2)
-
-
-def is_far_from_center(p1: Point, p2: Point) -> bool:
-    d1 = cal_distance(p1)
-    d2 = cal_distance(p2)
+def is_far_from_center(lpoint: Point, npoint: Point) -> bool:
+    d1 = math.dist((lpoint.x, lpoint.y), (CENTER.x, CENTER.y))
+    d2 = math.dist((npoint.x, npoint.y), (CENTER.x, CENTER.y))
     return d2 > d1
 
 
